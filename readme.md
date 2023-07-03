@@ -1,4 +1,4 @@
-# GENO, the Genetic Ontology
+# GENO, the Genetic Networks Ontology
 
 **Ontology**: [https://w3id.org/geno](https://gen-o.github.io/)
 
