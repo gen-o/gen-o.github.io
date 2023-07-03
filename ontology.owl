@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/geno#"
+     xml:base="https://w3id.org/geno"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:skos1="http://www.w3.org/2008/05/skos#">
+    <owl:Ontology rdf:about="https://w3id.org/geno">
+        <owl:versionIRI rdf:resource="https://w3id.org/geno/2023-07-01"/>
+        <owl:imports rdf:resource="http://purl.org/spar/fabio"/>
+        <dc:creator>Elena Spadini</dc:creator>
+        <dc:date>2023-07-01</dc:date>
+        <dc:description rdf:resource="https://gen-o.github.io/images/geno_webVOWL.png"/>
+        <dc:description>GENO is a generic model for genetic entities and their relationships, applicable mainly in the fields of Genetic Criticism and Editing.</dc:description>
+        <dc:rights>This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0).</dc:rights>
+        <dc:title xml:lang="en">GENO, the Genetic Network Ontology</dc:title>
+        <rdfs:comment>
+                        GENO is an ontology for the field of Genetic Criticism and Editing, that makes possible to describe all kinds of avant-textes, their relationships in and outside the genetic dossier and with the publications.
+
+                        **URL:** http://purl.org/hum/geno
+
+                        **Website:** https://gen-o.github.io
+
+                        **License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+                        **Creator**: [Elena Spadini](https://orcid.org/0000-0002-4522-2833)
+
+                        **Cite as:** Spadini, Elena. 2023. “GENO, the Genetic Network Ontology.” https://w3id.org/geno
+                        </rdfs:comment>
+        <owl:priorVersion rdf:resource="https://github.com/gen-o/geno/tree/master/2019-09-01"/>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/vocab/frbr/core#realization -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#realization">
+        <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#realizationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/frbr/core#realizationOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#realizationOf">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Expression"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/fabio/Work"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#dossierIsReusedInDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#dossierIsReusedInDossier">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/geno#isReusedInDossier"/>
+        <rdfs:domain rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#hasGeneticStage -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#hasGeneticStage">
+        <rdfs:domain rdf:resource="https://w3id.org/geno#Avant-textualWitness"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#isAfter -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#isAfter"/>
+    
+
+
+    <!-- https://w3id.org/geno#isGeneticWitnessInDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#isGeneticWitnessInDossier">
+        <rdfs:domain rdf:resource="https://w3id.org/geno#Witness"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#isPartOfDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#isPartOfDossier">
+        <rdfs:domain rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#isPartOfPublication -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#isPartOfPublication">
+        <rdfs:domain rdf:resource="https://w3id.org/geno#PublicationPart"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#isReusedInDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#isReusedInDossier">
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#isReusedInGeneticDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#isReusedInGeneticDossier"/>
+    
+
+
+    <!-- https://w3id.org/geno#publicationIsReusedInDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#publicationIsReusedInDossier">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/geno#isReusedInGeneticDossier"/>
+        <rdfs:domain rdf:resource="https://w3id.org/geno#Publication"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#publicationPartIsReusedInDossier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#publicationPartIsReusedInDossier">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/geno#isReusedInGeneticDossier"/>
+        <rdfs:domain rdf:resource="https://w3id.org/geno#PublicationPart"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#resultsInPublication -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#resultsInPublication">
+        <rdfs:domain rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/geno#resultsInPublicationPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/geno#resultsInPublicationPart">
+        <rdfs:domain rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <rdfs:range rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/spar/fabio/Expression -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/Expression"/>
+    
+
+
+    <!-- http://purl.org/spar/fabio/Work -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/Work"/>
+    
+
+
+    <!-- https://w3id.org/geno#Avant-textualWitness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#Avant-textualWitness">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#EndogenesisWitness"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/geno#GeneticStage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#DiaryEntry"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Documentation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#ExogenesisWitness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticStage"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Marginalia"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+        <rdfs:comment>Materiale a priori genetico. La pubblicazione che ridiventa materiale genetico, lo ridiventa in un documento concreto (non nella Publication, che qui è considerata come Expression). Quel documento è di fatto un avant-texte.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#CompositionalPhaseResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#CompositionalPhaseResource">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/geno#Avant-textualWitness"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#ClearCopy"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#Draft"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#Sketch"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#DiaryEntry -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#DiaryEntry">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#EndogenesisWitness"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Documentation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#ExogenesisWitness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticStage"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Marginalia"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PostEditorialPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrecompositionalPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrepublicationPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#Documentation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#Documentation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#ExogenesisWitness"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Marginalia"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#EndogenesisWitness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#EndogenesisWitness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/geno#Witness"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/geno#Avant-textualWitness"/>
+                            <rdf:Description rdf:about="https://w3id.org/geno#DiaryEntry"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#ExogenesisWitness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticStage"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Marginalia"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#ExogenesisWitness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#ExogenesisWitness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/geno#Witness"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/geno#Documentation"/>
+                            <rdf:Description rdf:about="https://w3id.org/geno#Marginalia"/>
+                            <rdf:Description rdf:about="https://w3id.org/geno#OtherMaterial"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticDossier"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticStage"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PostEditorialPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrecompositionalPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrepublicationPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#GeneticDossier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#GeneticDossier">
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#GeneticStage"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Marginalia"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PostEditorialPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrecompositionalPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrepublicationPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Witness"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#GeneticStage -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#GeneticStage">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Marginalia"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PostEditorialPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrecompositionalPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrepublicationPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Witness"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#Marginalia -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#Marginalia">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#ExogenesisWitness"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#OtherMaterial"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PostEditorialPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrecompositionalPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrepublicationPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+        <rdfs:comment>marcas y anotaciones manuscritas</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#OtherMaterial -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#OtherMaterial">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#ExogenesisWitness"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/geno#Witness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PostEditorialPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrecompositionalPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PrepublicationPhaseResource"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#PostEditorialPhaseResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#PostEditorialPhaseResource">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/geno#Avant-textualWitness"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/geno#PublishedItem"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#PrecompositionalPhaseResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#PrecompositionalPhaseResource">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/geno#Avant-textualWitness"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#List"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#Plan"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#Scenario"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#PrepublicationPhaseResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#PrepublicationPhaseResource">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/geno#Avant-textualWitness"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#FinalCopy"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/geno#hasGeneticStage"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/geno#Proofs"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#Publication"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#Publication -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#Publication">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/geno#PublicationPart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/geno#PublicationPart -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#PublicationPart"/>
+    
+
+
+    <!-- https://w3id.org/geno#Witness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/geno#Witness"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/geno#ClearCopy -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#ClearCopy">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#Draft -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#Draft">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#FinalCopy -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#FinalCopy">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#List -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#List">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#Plan -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#Plan">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#Proofs -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#Proofs">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#PublishedItem -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#PublishedItem">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#Scenario -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#Scenario">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/geno#Sketch -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/geno#Sketch">
+        <rdf:type rdf:resource="https://w3id.org/geno#GeneticStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/geno#DiaryEntry"/>
+            <rdf:Description rdf:about="https://w3id.org/geno#Marginalia"/>
+            <rdf:Description rdf:about="https://w3id.org/geno#OtherMaterial"/>
+            <rdf:Description rdf:about="https://w3id.org/geno#Publication"/>
+            <rdf:Description rdf:about="https://w3id.org/geno#PublicationPart"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

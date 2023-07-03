@@ -1,0 +1,706 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#ClearCopy"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Witness"
+    }, {
+      "@id" : "_:genid14"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+    }, {
+      "@id" : "https://w3id.org/geno#DiaryEntry"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Witness"
+    }, {
+      "@id" : "_:genid20"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+    }, {
+      "@id" : "_:genid4"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Documentation"
+    }, {
+      "@id" : "https://w3id.org/geno#Marginalia"
+    }, {
+      "@id" : "https://w3id.org/geno#OtherMaterial"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid25",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+    }, {
+      "@id" : "_:genid27"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid27",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#PublishedItem"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid29",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+    }, {
+      "@id" : "_:genid31"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid31",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid37"
+    }, {
+      "@id" : "_:genid35"
+    }, {
+      "@id" : "_:genid33"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid33",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#Scenario"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid35",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#Plan"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid37",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#List"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid39",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+    }, {
+      "@id" : "_:genid41"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid10"
+    }, {
+      "@id" : "_:genid8"
+    }, {
+      "@id" : "_:genid6"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid45"
+    }, {
+      "@id" : "_:genid43"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid43",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#Proofs"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#FinalCopy"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid47",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#DiaryEntry"
+    }, {
+      "@id" : "https://w3id.org/geno#Marginalia"
+    }, {
+      "@id" : "https://w3id.org/geno#OtherMaterial"
+    }, {
+      "@id" : "https://w3id.org/geno#Publication"
+    }, {
+      "@id" : "https://w3id.org/geno#PublicationPart"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#Sketch"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#Draft"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "http://purl.org/spar/fabio/Expression",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/spar/fabio/Work",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/vocab/frbr/core#realization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://purl.org/vocab/frbr/core#realizationOf"
+  } ]
+}, {
+  "@id" : "http://purl.org/vocab/frbr/core#realizationOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/spar/fabio/Expression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/spar/fabio/Work"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Elena Spadini"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@value" : "2023-07-01"
+  } ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@id" : "https://gen-o.github.io/images/geno_webVOWL.png"
+  }, {
+    "@value" : "GENO is a generic model for genetic entities and their relationships, applicable mainly in the fields of Genetic Criticism and Editing."
+  } ],
+  "http://purl.org/dc/elements/1.1/rights" : [ {
+    "@value" : "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0)."
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "en",
+    "@value" : "GENO, the Genetic Network Ontology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "\n                        GENO is an ontology for the field of Genetic Criticism and Editing, that makes possible to describe all kinds of avant-textes, their relationships in and outside the genetic dossier and with the publications.\n\n                        **URL:** http://purl.org/hum/geno\n\n                        **Website:** https://gen-o.github.io\n\n                        **License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n                        **Creator**: [Elena Spadini](https://orcid.org/0000-0002-4522-2833)\n\n                        **Cite as:** Spadini, Elena. 2023. “GENO, the Genetic Network Ontology.” https://w3id.org/geno\n                        "
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://purl.org/spar/fabio"
+  } ],
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
+    "@id" : "https://github.com/gen-o/geno/tree/master/2019-09-01"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://w3id.org/geno/2023-07-01"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Avant-textualWitness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Materiale a priori genetico. La pubblicazione che ridiventa materiale genetico, lo ridiventa in un documento concreto (non nella Publication, che qui è considerata come Expression). Quel documento è di fatto un avant-texte."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#EndogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  }, {
+    "@id" : "_:genid1"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#DiaryEntry"
+  }, {
+    "@id" : "https://w3id.org/geno#Documentation"
+  }, {
+    "@id" : "https://w3id.org/geno#ExogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  }, {
+    "@id" : "https://w3id.org/geno#Marginalia"
+  }, {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#ClearCopy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#CompositionalPhaseResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#DiaryEntry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#EndogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Documentation"
+  }, {
+    "@id" : "https://w3id.org/geno#ExogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  }, {
+    "@id" : "https://w3id.org/geno#Marginalia"
+  }, {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  }, {
+    "@id" : "https://w3id.org/geno#PostEditorialPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrepublicationPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Documentation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#ExogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Marginalia"
+  }, {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Draft",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#EndogenesisWitness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#ExogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  }, {
+    "@id" : "https://w3id.org/geno#Marginalia"
+  }, {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid12"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#ExogenesisWitness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  }, {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  }, {
+    "@id" : "https://w3id.org/geno#PostEditorialPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrepublicationPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid18"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#FinalCopy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#GeneticDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  }, {
+    "@id" : "https://w3id.org/geno#Marginalia"
+  }, {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  }, {
+    "@id" : "https://w3id.org/geno#PostEditorialPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrepublicationPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#GeneticStage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Marginalia"
+  }, {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  }, {
+    "@id" : "https://w3id.org/geno#PostEditorialPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrepublicationPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#List",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Marginalia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "marcas y anotaciones manuscritas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#ExogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#OtherMaterial"
+  }, {
+    "@id" : "https://w3id.org/geno#PostEditorialPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrepublicationPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#OtherMaterial",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/geno#ExogenesisWitness"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#PostEditorialPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#PrepublicationPhaseResource"
+  }, {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Plan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#PostEditorialPhaseResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid25"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid29"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#PrepublicationPhaseResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  }, {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid39"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Proofs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Publication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/spar/fabio/Expression"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#PublicationPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/geno#PublishedItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Scenario",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Sketch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#Witness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/geno#dossierIsReusedInDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/geno#isReusedInDossier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#hasGeneticStage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#Avant-textualWitness"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#isAfter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/geno#isGeneticWitnessInDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#isPartOfDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#isPartOfPublication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#isReusedInDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#isReusedInGeneticDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/geno#publicationIsReusedInDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/geno#isReusedInGeneticDossier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#publicationPartIsReusedInDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/geno#isReusedInGeneticDossier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#resultsInPublication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#resultsInPublicationPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ]
+} ]
