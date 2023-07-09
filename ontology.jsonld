@@ -75,15 +75,51 @@
 }, {
   "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+      "@id" : "_:genid29"
     }, {
       "@id" : "_:genid27"
     } ]
   } ]
 }, {
   "@id" : "_:genid27",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#resultsInPublicationPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid29",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/geno#Publication"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#resultsInPublication"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
+    }, {
+      "@id" : "_:genid32"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/geno#PublishedItem"
@@ -92,63 +128,35 @@
     "@id" : "https://w3id.org/geno#hasGeneticStage"
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid34",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/geno#Avant-textualWitness"
     }, {
-      "@id" : "_:genid31"
+      "@id" : "_:genid36"
     } ]
   } ]
 }, {
-  "@id" : "_:genid31",
+  "@id" : "_:genid36",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "_:genid37"
+      "@id" : "_:genid42"
     }, {
-      "@id" : "_:genid35"
+      "@id" : "_:genid40"
     }, {
-      "@id" : "_:genid33"
+      "@id" : "_:genid38"
     } ]
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid38",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/geno#Scenario"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/geno#hasGeneticStage"
-  } ]
-}, {
-  "@id" : "_:genid35",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://w3id.org/geno#Plan"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/geno#hasGeneticStage"
-  } ]
-}, {
-  "@id" : "_:genid37",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://w3id.org/geno#List"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/geno#hasGeneticStage"
-  } ]
-}, {
-  "@id" : "_:genid39",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/geno#Avant-textualWitness"
-    }, {
-      "@id" : "_:genid41"
-    } ]
   } ]
 }, {
   "@id" : "_:genid4",
@@ -163,17 +171,45 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid40",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#Plan"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://w3id.org/geno#List"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/geno#hasGeneticStage"
+  } ]
+}, {
+  "@id" : "_:genid44",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "_:genid45"
+      "@id" : "https://w3id.org/geno#Avant-textualWitness"
     }, {
-      "@id" : "_:genid43"
+      "@id" : "_:genid46"
     } ]
   } ]
 }, {
-  "@id" : "_:genid43",
+  "@id" : "_:genid46",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid50"
+    }, {
+      "@id" : "_:genid48"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid48",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/geno#Proofs"
@@ -182,7 +218,7 @@
     "@id" : "https://w3id.org/geno#hasGeneticStage"
   } ]
 }, {
-  "@id" : "_:genid45",
+  "@id" : "_:genid50",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@id" : "https://w3id.org/geno#FinalCopy"
@@ -191,20 +227,16 @@
     "@id" : "https://w3id.org/geno#hasGeneticStage"
   } ]
 }, {
-  "@id" : "_:genid47",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/geno#DiaryEntry"
-    }, {
-      "@id" : "https://w3id.org/geno#Marginalia"
-    }, {
-      "@id" : "https://w3id.org/geno#OtherMaterial"
-    }, {
-      "@id" : "https://w3id.org/geno#Publication"
-    }, {
-      "@id" : "https://w3id.org/geno#PublicationPart"
-    } ]
+  "@id" : "_:genid52",
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid53",
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid6",
@@ -226,28 +258,34 @@
   } ]
 }, {
   "@id" : "http://purl.org/spar/fabio/Expression",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://purl.org/spar/fabio/Work",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://purl.org/vocab/frbr/core#realization",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://purl.org/vocab/frbr/core#realizationOf"
-  } ]
-}, {
-  "@id" : "http://purl.org/vocab/frbr/core#realizationOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/spar/fabio/Expression"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of FRBR expression, restricted to expressions of fabio:Works."
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.org/spar/fabio/Work"
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Expression"
   } ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "This class comprises visible or tactile marks (called glyphs or graphs), which relate in a systematic way to units of speech, intentionally traced (i.e., “written”) on some kind of physical support by using specific techniques and tools, with the purpose of conveying a message towards a given receiver or group of receivers."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Written Text"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#qualifiedCardinality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://w3id.org/geno",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/contributor" : [ {
+    "@value" : "Alessio Christen"
+  } ],
   "http://purl.org/dc/elements/1.1/creator" : [ {
     "@value" : "Elena Spadini"
   } ],
@@ -257,20 +295,21 @@
   "http://purl.org/dc/elements/1.1/description" : [ {
     "@id" : "https://gen-o.github.io/images/geno_webVOWL.png"
   }, {
-    "@value" : "GENO is a generic model for genetic entities and their relationships, applicable mainly in the fields of Genetic Criticism and Editing."
+    "@value" : "GENO is an ontology for describing genetic entities and their relationships. It is applicable in the fields of genetic criticism, scholarly editing, authorial philology and in general for the study of authorial manuscripts and writing processes."
   } ],
   "http://purl.org/dc/elements/1.1/rights" : [ {
     "@value" : "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0)."
   } ],
   "http://purl.org/dc/elements/1.1/title" : [ {
-    "@language" : "en",
-    "@value" : "GENO, the Genetic Network Ontology"
+    "@value" : "GENO, the Genetic Networks Ontology"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "\n                        GENO is an ontology for the field of Genetic Criticism and Editing, that makes possible to describe all kinds of avant-textes, their relationships in and outside the genetic dossier and with the publications.\n\n                        **URL:** http://purl.org/hum/geno\n\n                        **Website:** https://gen-o.github.io\n\n                        **License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n                        **Creator**: [Elena Spadini](https://orcid.org/0000-0002-4522-2833)\n\n                        **Cite as:** Spadini, Elena. 2023. “GENO, the Genetic Network Ontology.” https://w3id.org/geno\n                        "
+    "@value" : "\n                        **URL:** https://w3id.org/geno\n\n                        **Website:** https://gen-o.github.io\n\n                        **License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n                        **Creator**: [Elena Spadini](https://orcid.org/0000-0002-4522-2833)\n\n                        **Cite as:** Spadini, Elena. 2023. “GENO, the Genetic Networks Ontology.” https://w3id.org/geno\n                        "
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
     "@id" : "http://purl.org/spar/fabio"
+  }, {
+    "@id" : "http://www.cidoc-crm.org/extensions/crmtex"
   } ],
   "http://www.w3.org/2002/07/owl#priorVersion" : [ {
     "@id" : "https://github.com/gen-o/geno/tree/master/2019-09-01"
@@ -285,7 +324,10 @@
   "@id" : "https://w3id.org/geno#Avant-textualWitness",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Materiale a priori genetico. La pubblicazione che ridiventa materiale genetico, lo ridiventa in un documento concreto (non nella Publication, che qui è considerata come Expression). Quel documento è di fatto un avant-texte."
+    "@value" : "The witness created within a writing project. Compared to other types of witness (diary, marginalia etc.), the avant-textual witness is a priori genetic, because it is born as a plan, a list, a draft for something."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Avant-textual witness"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#EndogenesisWitness"
@@ -322,12 +364,24 @@
 }, {
   "@id" : "https://w3id.org/geno#CompositionalPhaseResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness that belongs to the compositional phase of the writing project, such as a sketch, a draft or a clear copy."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Compositional phase resource"
+  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "_:genid2"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#DiaryEntry",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A diary entry, usually defined by a date and sometimes a place at the beginning of the text. It is not genetic material a priori, but becomes part of the genetic dossier when used in a writing project."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Diary entry"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#EndogenesisWitness"
   }, {
@@ -359,6 +413,12 @@
 }, {
   "@id" : "https://w3id.org/geno#Documentation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Documentation used by the author in a writing project. For example, a web page or newspaper clipping that the author consults."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Documentation"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#ExogenesisWitness"
   }, {
@@ -378,6 +438,12 @@
 }, {
   "@id" : "https://w3id.org/geno#EndogenesisWitness",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The text written by the author and internal to the writing project."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Endogenetic witness"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#Witness"
   } ],
@@ -402,6 +468,12 @@
 }, {
   "@id" : "https://w3id.org/geno#ExogenesisWitness",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The text, whether written or annotated by the author or not, that is brought into the genetic dossier from outside, such as external sources and documentation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Exogenetic witness"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#Witness"
   } ],
@@ -432,6 +504,15 @@
 }, {
   "@id" : "https://w3id.org/geno#GeneticDossier",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The collection of witnesses that provide evidence for a writing project, resulting or not in a publication. The genetic dossier is a critical construction of the interpreter studying the materials. The genetic dossier includes avant-textual witnesses, but also other types of witnesses, such as diary entries, marginalia or documentation. It may contain one or more sub-dossiers, which are instances of the same geno:GeneticDossier class and are linked to it through the property geno:dossierIsPartOfDossier."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Genetic dossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid25"
+  } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/geno#GeneticStage"
   }, {
@@ -454,6 +535,12 @@
 }, {
   "@id" : "https://w3id.org/geno#GeneticStage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The genetic stage of an avant-textual witness. Possible values are defined in the current ontology: sketch, scenario, plan, list, draft, clear copy, final copy, proofs, published item. This list of values can be extended by adding new instances."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Genetic stage"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
@@ -484,7 +571,10 @@
   "@id" : "https://w3id.org/geno#Marginalia",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "marcas y anotaciones manuscritas"
+    "@value" : "The mark or annotation in a publication by another author, that is considered relevant to a genetic process and is therefore included in the genetic dossier."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Marginalia"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#ExogenesisWitness"
@@ -507,6 +597,12 @@
 }, {
   "@id" : "https://w3id.org/geno#OtherMaterial",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Any other material that is considered relevant to a genetic process and is therefore included in the genetic dossier. For example, the contract with a publisher. The type of material can be further specified by extending the current ontology."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Other material"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/geno#ExogenesisWitness"
   }, {
@@ -532,35 +628,53 @@
 }, {
   "@id" : "https://w3id.org/geno#PostEditorialPhaseResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness that belongs to the post-editorial phase of the writing project, for example a published exemplar with annotations."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Post-editorial phase resource"
+  } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/geno#Publication"
   }, {
     "@id" : "https://w3id.org/geno#PublicationPart"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid25"
+    "@id" : "_:genid30"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#PrecompositionalPhaseResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness that belongs to the pre-compositional phase of the writing project, such as a list, a plan or a scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Pre-compositional phase resource"
+  } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/geno#Publication"
   }, {
     "@id" : "https://w3id.org/geno#PublicationPart"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid29"
+    "@id" : "_:genid34"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#PrepublicationPhaseResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness that belongs to the pre-publication phase of the writing project, such as the final copy or the proofs."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Pre-publication phase resource"
+  } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/geno#Publication"
   }, {
     "@id" : "https://w3id.org/geno#PublicationPart"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid39"
+    "@id" : "_:genid44"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#Proofs",
@@ -571,15 +685,32 @@
 }, {
   "@id" : "https://w3id.org/geno#Publication",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The publication, e.g. the book or the journal article. As a subclass of fabio:Expression, the publication is the realisation of a work; it is embodied in manifestations that have one or more exemplars in single items. For example, the publication is the book, that can be referenced with bibliographical information such as author, title, publisher, date of publication. The publication differs from the individual exemplars of the book, for example from a copy of the book with authorial annotations in view of a new edition (i.e., an avant-textual witness)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Publication"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/spar/fabio/Expression"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/geno#PublicationPart"
+  }, {
+    "@id" : "https://w3id.org/geno#Witness"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#PublicationPart",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The single part of a publication. For example, a chapter in a novel, a short story or a poem in a collection."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Publication part"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ]
 }, {
   "@id" : "https://w3id.org/geno#PublishedItem",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -600,12 +731,39 @@
   } ]
 }, {
   "@id" : "https://w3id.org/geno#Witness",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A witness is an existing instance of a text. Witnesses may be carried in any physical medium (e.g. paper, digital, oral) and traced with any technique and tool (e.g. handwritten, typed) and a single carrier may contain several witnesses. As a subclass of CRMtex:TX1_Written_Text, the witness is unique and characterised by the close relationship between the text and its support."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Witness"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#dossierIsPartOfDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The genetic dossier is part of another genetic dossier. For example, the different sections of a book may each have a different genesis, documented in different dossiers; the dossier of each section is part of the dossier of the book."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "dossier is part of dossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ]
 }, {
   "@id" : "https://w3id.org/geno#dossierIsReusedInDossier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The genetic dossier is reused in another genetic dossier. This property applies to a dossier that does not result in a publication, i.e. an unpublished writing project, whose materials are reused in another project."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "dossier is reused in dossier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
@@ -616,29 +774,62 @@
 }, {
   "@id" : "https://w3id.org/geno#hasGeneticStage",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The genetic stage of an avant-textual witness. The possible values are defined as instances of geno:GeneticStage."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#Avant-textualWitness"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has genetic stage"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#GeneticStage"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#isAfter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
-}, {
-  "@id" : "https://w3id.org/geno#isGeneticWitnessInDossier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness comes chronologically after another witness in the genetic dossier. Defining the chronological succession of the witnesses means ordering them (fr. classement des manuscrits)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#Witness"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is after"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/geno#GeneticDossier"
+    "@id" : "https://w3id.org/geno#Witness"
   } ]
 }, {
-  "@id" : "https://w3id.org/geno#isPartOfDossier",
+  "@id" : "https://w3id.org/geno#isBefore",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness comes chronologically before another witness in the genetic dossier. Defining the chronological succession of the witnesses means ordering them (fr. classement des manuscrits)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/geno#GeneticDossier"
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is before"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/geno#isAfter"
+  } ]
+}, {
+  "@id" : "https://w3id.org/geno#isMemberOfDossier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The witness is a member of the dossier. The same witness can be a member of multiple dossiers."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/geno#Witness"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is member of dossier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
@@ -646,8 +837,14 @@
 }, {
   "@id" : "https://w3id.org/geno#isPartOfPublication",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The section of a publication is part of the whole publication."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is part of publication"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#Publication"
@@ -655,41 +852,62 @@
 }, {
   "@id" : "https://w3id.org/geno#isReusedInDossier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A super-property that groups all the properties that describe the reuse of a resource (a publication, publication part or dossier) in a genetic dossier."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is reused in dossier"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
   } ]
 }, {
-  "@id" : "https://w3id.org/geno#isReusedInGeneticDossier",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
-}, {
   "@id" : "https://w3id.org/geno#publicationIsReusedInDossier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The publication is repurposed for another writing project, documented by a genetic dossier."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "publication is reused in dossier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/geno#isReusedInGeneticDossier"
+    "@id" : "https://w3id.org/geno#isReusedInDossier"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#publicationPartIsReusedInDossier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The publication part (section, chapter, etc.) is repurposed for another writing project, documented by a genetic dossier."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#PublicationPart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "publication part is reused in dossier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/geno#isReusedInGeneticDossier"
+    "@id" : "https://w3id.org/geno#isReusedInDossier"
   } ]
 }, {
   "@id" : "https://w3id.org/geno#resultsInPublication",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The genetic dossier results in a publication."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "results in publication"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#Publication"
@@ -697,8 +915,14 @@
 }, {
   "@id" : "https://w3id.org/geno#resultsInPublicationPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The genetic dossier results in a part of a publication (section, chapter, etc.)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/geno#GeneticDossier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "results in publication part"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/geno#PublicationPart"
