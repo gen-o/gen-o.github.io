@@ -1,0 +1,14 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<https://w3id.org/geno/2023-07-01> a prov:Entity;
+	 dc:title "GENO, the Genetic Networks Ontology";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <https://w3id.org/geno>;
+	 prov:wasRevisionOf <https://github.com/gen-o/geno/tree/master/2019-09-01>;
+.
+:agent0 a prov:Agent; foaf:name "Elena Spadini".
+:agent1 a prov:Agent; foaf:name "Alessio Christen".
