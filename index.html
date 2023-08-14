@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>GENO, the Genetic Networks Ontology</title>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <link rel="stylesheet" href="resources/primer.css" media="screen" />
+      <link rel="stylesheet" href="resources/rec.css" media="screen" />
+      <link rel="stylesheet" href="resources/extra.css" media="screen" />
+      <link rel="stylesheet" href="resources/owl.css" media="screen" />
+      <title>GENO, the Genetic Networks Ontology</title>
 
 
-<!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/geno","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/geno","name":"GENO, the Genetic Networks Ontology", "headline":"GENO is an ontology for describing genetic entities and their relationships. It is applicable in the fields of genetic criticism, scholarly editing, authorial philology and in general for the study of authorial manuscripts and writing processes.", "datePublished":"Fri Aug 11 15:37:41 CEST 2023", "version":"1.0", "author":[{"@type":"Person","name":"Elena Spadini"}], "contributor":[{"@type":"Person","name":"Alessio Christen"}]}</script>
+      <!-- SCHEMA.ORG METADATA -->
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/geno","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/geno","name":"GENO, the Genetic Networks Ontology", "headline":"GENO is an ontology for describing genetic entities and their relationships. It is applicable in the fields of genetic criticism, scholarly editing, authorial philology and in general for the study of authorial manuscripts and writing processes.", "datePublished":"Fri Aug 11 15:37:41 CEST 2023", "version":"1.0", "author":[{"@type":"Person","name":"Elena Spadini"}], "contributor":[{"@type":"Person","name":"Alessio Christen"}]}</script>
 
-<script src="resources/jquery.js"></script> 
-<script src="resources/marked.min.js"></script> 
-    <script> 
+      <script src="resources/jquery.js"></script>
+      <script src="resources/marked.min.js"></script>
+      <script> 
 function loadHash() {
   jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
-	var hash = location.hash;
-	if($(hash).offset()!=null){
+	var hash = location.hash; if($(hash).offset()!=null){
 	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
 }
 	loadTOC();
@@ -24,22 +27,9 @@ function loadTOC(){
 	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
 	  jQuery(".list").each(function(){
 		if(jQuery(this).is('h2')){
-			if(j>0){
-				t+='</ul>';
-				j=0;
-			}
-			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
-			i++;
+			if(j>0){ t+='</ul>'; j=0; } t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>'; i++; } if(jQuery(this).is('h3')){ if(j==0){ t+='<ul>'; } j++; t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
 		}
-		if(jQuery(this).is('h3')){
-			if(j==0){
-				t+='<ul>';
-			}
-			j++;
-			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
-		}
-	  });
-	  t+='</ul>';
+	  }); t+='</ul>';
 	  $("#toc").html(t); 
 }
 $(function(){
@@ -47,1756 +37,1858 @@ $(function(){
 }); $.fn.ignore = function(sel){
         return this.clone().find(sel||">*").remove().end();
  }; 
-   </script> 
-  </head> 
+</script>
+</head>
 
 <body>
 <div class="container">
 <div class="head">
-<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+   <div style="float:right">language <a href="index-en.html">
+      <b>en</b>
+   </a>
+</div>
 <h1>GENO, the Genetic Networks Ontology</h1>
 
 
 <dl>
-<dt>This version:</dt>
-<dd><a href="https://w3id.org/geno/2023-07-01">https://w3id.org/geno/2023-07-01</a></dd>
-<dt>Latest version:</dt>
-<dd><a href="https://w3id.org/geno">https://w3id.org/geno</a></dd>
-<dt>Previous version:</dt>
-<dd><a href="https://github.com/gen-o/geno/tree/master/2019-09-01">https://github.com/gen-o/geno/tree/master/2019-09-01</a></dd>
-<dt>Revision:</dt>
-<dd>1.0</dd>
-<dt>Authors:</dt>
-<dd>Elena Spadini</dd>
+   <dt>This version:</dt>
+   <dd>
+      <a href="https://w3id.org/geno/2023-07-01">https://w3id.org/geno/2023-07-01</a>
+   </dd>
+   <dt>Latest version:</dt>
+   <dd>
+      <a href="https://w3id.org/geno">https://w3id.org/geno</a>
+   </dd>
+   <dt>Previous version:</dt>
+   <dd>
+      <a href="https://github.com/gen-o/geno/tree/master/2019-09-01">https://github.com/gen-o/geno/tree/master/2019-09-01</a>
+   </dd>
+   <dt>Revision:</dt>
+   <dd>1.0</dd>
+   <dt>Authors:</dt>
+   <dd>Elena Spadini</dd>
 
-<dt>Contributors:</dt>
-<dd>Alessio Christen</dd>
+   <dt>Contributors:</dt>
+   <dd>Alessio Christen</dd>
 
-<dt>Imported Ontologies:</dt>
-<dd><a href="http://purl.org/spar/fabio">fabio</a></dd><dd><a href="http://purl.org/spar/frbr">frbr</a></dd><dd><a href="http://www.cidoc-crm.org/extensions/crmtex">CRMtex</a></dd>
+   <dt>Imported Ontologies:</dt>
+   <dd>
+      <a href="http://purl.org/spar/fabio">fabio</a>
+   </dd>
+   <dd>
+      <a href="http://purl.org/spar/frbr">frbr</a>
+   </dd>
+   <dd>
+      <a href="http://www.cidoc-crm.org/extensions/crmtex">CRMtex</a>
+   </dd>
 
-<dt>Download serialization:</dt>
-<dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg"
-            alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img
-            src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a
-         href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg"
-            alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img
-            src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd>
-<dt>License:</dt>
-<dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img
-         src="https://img.shields.io/badge/License-This%20work%20is%20distributed%20under%20a%20Creative%20Commons%20Attribution%20License%20(https://creativecommons.org/licenses/by/4.0).-blue.svg"
-         alt="http://insertlicenseURIhere.example.org" /></a>
-</dd>
-<dt>Visualization:</dt>
-<dd><a href="webvowl/index.html#" target="_blank"><img
-         src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!--
+   <dt>Download serialization:</dt>
+   <dd>
+      <span>
+         <a href="ontology.jsonld" target="_blank">
+            <img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" />
+         </a>
+      </span>
+      <span>
+         <a href="ontology.owl" target="_blank">
+            <img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" />
+         </a>
+      </span>
+      <span>
+         <a href="ontology.nt" target="_blank">
+            <img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" />
+         </a>
+      </span>
+      <span>
+         <a href="ontology.ttl" target="_blank">
+            <img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" />
+         </a>
+      </span>
+   </dd>
+   <dt>License:</dt>
+   <dd>
+      <a href="http://insertlicenseURIhere.example.org" target="_blank">
+         <img src="https://img.shields.io/badge/License-This%20work%20is%20distributed%20under%20a%20Creative%20Commons%20Attribution%20License%20(https://creativecommons.org/licenses/by/4.0).-blue.svg" alt="http://insertlicenseURIhere.example.org" />
+      </a>
+   </dd>
+   <dt>Visualization:</dt>
+   <dd>
+      <a href="webvowl/index.html#" target="_blank">
+         <img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" />
+      </a>
+   </dd>
+   <!--
 <dt>Evaluation:</dt>
-<dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img
-         src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg"
-         alt="Evaluate with OOPS!" /></a></dd>
+<dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd>
 -->
-<dt>Cite as:</dt>
-<dd>Elena Spadini. GENO, the Genetic Networks Ontology. Revision: 1.0. Retrieved from: https://w3id.org/geno/2023-07-01
-</dd>
+   <dt>Cite as:</dt>
+   <dd>Elena Spadini. <i>GENO, the Genetic Network Ontology</i>. Revision: 1.0. https://w3id.org/geno</dd>
 </dl>
 
-<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a>
+<hr/>
 </div>
 <div class="status">
 <div>
-<span>Ontology Specification</span>
+   <span>Ontology Specification</span>
 </div>
-</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-GENO is an ontology for describing genetic entities and their relationships. It is applicable in the fields of genetic criticism, scholarly editing, authorial philology and in general for the study of authorial manuscripts and writing processes.</span>
 </div>
-<div id="toc"></div>  
+<div id="abstract">
+<h2>Abstract</h2>
+<span class="markdown">
+GENO is a generic model for describing genetic entities and their relationships. It is applicable in the fields of genetic criticism, scholarly editing, authorial philology and in general for the study of authorial manuscripts and writing processes.</span>
+</div>
+<div id="toc"></div>
 
 <!--OVERVIEW SECTION-->
-    <div id="overview"><h2 id="overv" class="list">GENO, the Genetic Networks Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="overview">
+<h2 id="overv" class="list">GENO, the Genetic Networks Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a>
+</span>
+</h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:extra="https://w3id.org/extra#"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    class="hlist">
-   <li>
-      <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-   </li>
-   <li>
-      <a href="#CompositionalPhaseResource" title="https://w3id.org/geno#CompositionalPhaseResource">Compositional phase resource</a>
-   </li>
-   <li>
-      <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-   </li>
-   <li>
-      <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-   </li>
-   <li>
-      <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-   </li>
-   <li>
-      <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-   </li>
-   <li>
-      <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">Expression</a>
-   </li>
-   <li>
-      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-   </li>
-   <li>
-      <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-   </li>
-   <li>
-      <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-   </li>
-   <li>
-      <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-   </li>
-   <li>
-      <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-   </li>
-   <li>
-      <a href="#PrecompositionalPhaseResource"
-         title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-   </li>
-   <li>
-      <a href="#PrepublicationPhaseResource"
-         title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-   </li>
-   <li>
-      <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-   </li>
-   <li>
-      <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-   </li>
-   <li>
-      <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-   </li>
-   <li>
-      <a href="#http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text"
-         title="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">Written Text</a>
-   </li>
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+<li>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+</li>
+<li>
+   <a href="#CompositionalPhaseResource" title="https://w3id.org/geno#CompositionalPhaseResource">Compositional phase resource</a>
+</li>
+<li>
+   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+</li>
+<li>
+   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+</li>
+<li>
+   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+</li>
+<li>
+   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+</li>
+<li>
+   <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">Expression</a>
+</li>
+<li>
+   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+</li>
+<li>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+</li>
+<li>
+   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+</li>
+<li>
+   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+</li>
+<li>
+   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+</li>
+<li>
+   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+</li>
+<li>
+   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+</li>
+<li>
+   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+</li>
+<li>
+   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+</li>
+<li>
+   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+</li>
+<li>
+   <a href="#http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text" title="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">Written Text</a>
+</li>
 </ul>
 
+
 <div>
-   <span>Class Hierarchy</span>
-   <table>
-      <tr>
-         <td>-</td>
-         <td>Genetic dossier</td>
-         <td></td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Genetic stage</td>
-         <td></td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Publication part</td>
-         <td></td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Witness</td>
-         <td></td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>Avant-textual witness</td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>-</td>
-         <td>Precompositional phase resource</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>-</td>
-         <td>Compositional phase resource</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>-</td>
-         <td>Prepublication phase resource</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>-</td>
-         <td>Posteditorial phase resource</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Diary entry</td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Documentation</td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Endogenesis witness</td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>Avant-textual witness</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>Diary entry</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Exogensis witness</td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>Documentation</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>Marginalia</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>-</td>
-         <td>Other material</td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Marginalia</td>
-         <td></td>
-      </tr>
-      <tr>
-         <td>-</td>
-         <td>Other material</td>
-         <td></td>
-      </tr>
-   </table>
+<span>
+   <b>Classes hierarchy</b>
+</span>
+<br/>
+<br/>
+
+<span>Expression (fabio)</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;Publication</span>
+<br/>
+<span>Genetic dossier</span>
+<br/>
+<span>Genetic stage</span>
+<br/>
+<span>Publication part</span>
+<br/>
+<span>Written Text (CRMtex)</span>
+<br/>
+
+<span>-&emsp;&emsp;&emsp;&emsp;Witness</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Avant-textual witness</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Precompositional phase resource</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Compositional phase resource</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Post-editorial phase resource</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Pre-publication phase resource</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Diary entry</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Documentation</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Endogenetic witness</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Avant-textual witness</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Diary entry</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Exogenetic witness</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Documentation</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Marginalia</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;
+      -&emsp;&emsp;&emsp;&emsp;Other material</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Marginalia</span>
+<br/>
+<span>-&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;Other material</span>
+<br/>
 </div>
 
 
 
 
-<h4>Object Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    class="hlist">
-   <li>
-      <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
-   </li>
-   <li>
-      <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
-   </li>
-   <li>
-      <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-   </li>
-   <li>
-      <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
-   </li>
-   <li>
-      <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
-   </li>
-   <li>
-      <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
-   </li>
-   <li>
-      <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
-   </li>
-   <li>
-      <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
-   </li>
-   <li>
-      <a href="#publicationIsReusedInDossier"
-         title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
-   </li>
-   <li>
-      <a href="#publicationPartIsReusedInDossier"
-         title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
-   </li>
-   <li>
-      <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
-   </li>
-   <li>
-      <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
-   </li>
-</ul><h4>Named Individuals</h4><ul xmlns:extra="https://w3id.org/extra#"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    class="hlist">
-   <li>
-      <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">
-         <span>clear copy</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Draft" title="https://w3id.org/geno#Draft">
-         <span>draft</span>
-      </a>
-   </li>
-   <li>
-      <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">
-         <span>final copy</span>
-      </a>
-   </li>
-   <li>
-      <a href="#List" title="https://w3id.org/geno#List">
-         <span>list</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Plan" title="https://w3id.org/geno#Plan">
-         <span>plan</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Proofs" title="https://w3id.org/geno#Proofs">
-         <span>proofs</span>
-      </a>
-   </li>
-   <li>
-      <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">
-         <span>published item</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Scenario" title="https://w3id.org/geno#Scenario">
-         <span>scenario</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Sketch" title="https://w3id.org/geno#Sketch">
-         <span>sketch</span>
-      </a>
-   </li>
+
+<h4>Object Properties</h4>
+<ul xmlns:extra="https://w3id.org/extra#"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+<li>
+   <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
+</li>
+<li>
+   <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
+</li>
+<li>
+   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+</li>
+<li>
+   <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
+</li>
+<li>
+   <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
+</li>
+<li>
+   <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
+</li>
+<li>
+   <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
+</li>
+<li>
+   <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
+</li>
+<li>
+   <a href="#publicationIsReusedInDossier" title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
+</li>
+<li>
+   <a href="#publicationPartIsReusedInDossier" title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
+</li>
+<li>
+   <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
+</li>
+<li>
+   <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
+</li>
+</ul>
+
+<h4>Object properties hierarchy</h4>
+
+<table style="background-color: transparent; border:none">
+   <tr style="text-align: center; font-style: italic;">
+      <td>Property</td>
+      <td>Domain</td>
+      <td>Range</td>
+   </tr>
+   <tr>
+      <td>dossier is part of dossier</td>
+      <td>Genetic dossier</td>
+      <td>Genetic dossier</td>
+   </tr>
+   <tr>
+      <td>dossier is reused in dossier</td>
+      <td>Genetic dossier</td>
+      <td>Genetic dossier</td>
+   </tr>
+   <tr>
+      <td>has genetic stage</td>
+      <td>Avant-textual witness</td>
+      <td>Genetic stage</td>
+   </tr>
+   <tr>
+      <td>is after</td>
+      <td>Witness</td>
+      <td>Witness</td>
+   </tr>
+   <tr>
+      <td>is before</td>
+      <td>Witness</td>
+      <td>Witness</td>
+   </tr>
+   <tr>
+      <td>is member of dossier</td>
+      <td>Witness</td>
+      <td>Genetic dossier</td>  
+   </tr>
+   <tr>
+      <td>is part of publication</td>
+      <td>Publication part</td>
+      <td>Publication</td>
+   </tr>
+   <tr>
+      <td>is reused in dossier</td>
+      <td></td>
+      <td>Genetic dossier</td>
+   </tr>
+   <tr>
+      <td>publication is reused in dossier</td>
+      <td>Publication</td>
+      <td>Genetic dossier</td>
+   </tr>
+   <tr>
+      <td>publication part is reused in dossier</td>
+      <td>Publication part</td>
+      <td>Genetic dossier</td>   
+   </tr>
+   <tr>
+      <td>results in publication</td>
+      <td>Genetic dossier</td>
+      <td>Publication</td>
+   </tr>
+   <tr>
+      <td>results in publication part</td>
+      <td>Genetic dossier</td>
+      <td>Publication part</td>
+   </tr>
+</table>
+
+
+
+<h4>Named Individuals</h4>
+<ul xmlns:extra="https://w3id.org/extra#"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+<li>
+   <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">
+      <span>clear copy</span>
+   </a>
+</li>
+<li>
+   <a href="#Draft" title="https://w3id.org/geno#Draft">
+      <span>draft</span>
+   </a>
+</li>
+<li>
+   <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">
+      <span>final copy</span>
+   </a>
+</li>
+<li>
+   <a href="#List" title="https://w3id.org/geno#List">
+      <span>list</span>
+   </a>
+</li>
+<li>
+   <a href="#Plan" title="https://w3id.org/geno#Plan">
+      <span>plan</span>
+   </a>
+</li>
+<li>
+   <a href="#Proofs" title="https://w3id.org/geno#Proofs">
+      <span>proofs</span>
+   </a>
+</li>
+<li>
+   <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">
+      <span>published item</span>
+   </a>
+</li>
+<li>
+   <a href="#Scenario" title="https://w3id.org/geno#Scenario">
+      <span>scenario</span>
+   </a>
+</li>
+<li>
+   <a href="#Sketch" title="https://w3id.org/geno#Sketch">
+      <span>sketch</span>
+   </a>
+</li>
 </ul>
 
 <!--<iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> -->
 </div>
-  
+
 
 <!--DESCRIPTION SECTION-->
-    <div id="description"><h2 id="desc" class="list">GENO, the Genetic Networks Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="description">
+<h2 id="desc" class="list">GENO, the Genetic Networks Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a>
+</span>
+</h2>
 
 
 
+<h3>Background</h3>
+
+<p>Genetic criticism and authorial philology are fields of study dealing with the genesis of literary, and more in general textual, works. A genetic witness is a document bearing witness to the genesis of a work, such as a manuscript, a typescript, a proof, a printed copy, a digital file, etc. While the single genetic witness can be formally modelled using the standards developed by the Text Encoding Initiative (the text, the support, each phenomenon on the page), no standard is available so far for describing the witness as a genetic entity and in relation with other witnesses. GENO aims at filling this gap, by providing a model for describing networks of genetic witnesses, that can be called 'genetic networks'.</p>
+<p>The following are two examples of genetic networks, taken from the Roud project (for which <a href="#genoRoud">see below</a>):
+   <!-- create a list with two items -->
+   <ul>
+      <li>a diary note taken on a small sheet of paper is copied on a notebook. The note is reused for writing a literary piece published in an article and the article is partially reused in a book;
+      </li>
+      <li>
+         two articles of literary criticism are reused in the making of a preface to a book. 
+      </li>
+   </ul>
+</p>
+
+
+<h3>Entities</h3>
 <p>
-   GENO is a generic model for describing genetic entities and their relationships. It is applicable in the fields of genetic criticism, scholarly editing, authorial philology and in general for the study of authorial manuscripts and writing processes.</p>
+   The main classes in GENO are geno:Witness, geno:Publication and geno:GeneticDossier.
+   <br/>The genetic dossier gathers all documents "that bear witness to the evolution of the work" (De Biasi 2004). It is a scholarly construct and not something instrinsic to the documents.
+   <br/>The classes geno:Publication and geno:Witness are two opposite poles in relation to the dossier: the dossier includes one or more witnesses and it results in a publication (or part of it) (Fig. 1).</p>
+
+   <div class="image">
+      <img width="60%" src="images/witness-dossier-pub.png"/>
+      <p class="caption">Figure 1: The relationship between the witness, the dossier and the publication.</p>
+   </div><br/>
+
    
-   <h3>Classes and properties</h3>
-   <p>
-   Coming soon
-   <!--
-      Documents (witnesses) vs publications
-   Different types of witnesses
-   Genetic stages
-   Dossier
-   Phases--></p>
+   <p>The relationships are slightly more complex when parts of publications should be considered separately (Fig. 2), as in the case for example of chapters with different genesis.</p>
    
+   <div class="image">
+      <img width="60%" src="images/witness-dossier-pub-parts.png"/>
+      <p class="caption">Figure 2: The relationship between the witness, the dossier, the publication and the publication part.</p>
+   </div><br/>
    
-   <h3>Background, terminology, competency questions and corresponding sparql queries</h3>
-   
-   <p>Genetic criticism and authorial philology are fields of study dealing with the genesis of literary, and more in general textual, works. A genetic witness is a document bearing witness to the genesis of a work, such as a manuscript, a typescript, a proof, a printed copy, a digital file, etc. While the single genetic witnesses can be formally modelled using the standards developed by the Text Encoding Initiative, their status as genetic entities and the relationship between them has not received the same attention, thus no computational analysis has been possible so far. GENO aims at filling this gap, by providing a model for describing the networks of genetic witnesses.</p>
-   
-   <p>Examples of genetic networks from the Roud project:
-      <ul>
-         <li>The diary note "Missy11 h et demie" (CLSR GR MS 4 A/3a) is copied in a diary notebook as "Missy 11 h et 1/2 soir" (CLSR GR MS 4 A/1a). This note is reused in "Cendre", article published in the periodical <i>Aujourd'hui</i>i> on the 10th of July 1930. This article is partially used in the book <i>Air de la solitude</i>, published in 1945.</li>
-         <li>The two articles of literary criticism about the writer Catherine Colomb, "Catherine Colomb, romancière vaudoise" and "Notre monde périssable sauvé par la poésie", published in 1956 and 1965 in the periodical <i>Gazette de Lausanne</i>>, are reused in the making of the preface to the complete works of Catherine Colomb, published in 1968.</li>
-      </ul>
+   <p>As a subclass of fabio:Expression, the publication is "a realization of a single work" (Davis and Newman 2005), but it is not a specific exemplar. When a publication is reused for a new writing project (e.g. a new edition or a new book), geno:Publication will have a link to the new dossier as geno:publicationIsReusedInDossier (or geno:publicationPartIsReusedInDossier). If there is a concrete document in which the original publication is reworked for the new project, for example an annotated exemplar of the publication (geno:PublishedItem), that document will be a witness belonging to the new dossier (Fig. 3).</p>
+
+   <div class="image">
+      <img width="60%" src="images/pub-reused.png"/>
+      <p class="caption">Figure 3: Reuse of a publication for a new writing project.</p>
+   </div><br/>
+
+   <p>In contrast to the publication, the witness is a concrete document. As a subclass of CRMtex:TX1_Written_Text, the witness is unique and characterised by the close relationship between the text and its support. Witnesses can be ordered chronologically using the properties geno:isBefore and geno:isAfter. In GENO, a witness can be further specified by its subclasses geno:Avant-textualWitness, geno:DiaryEntry, geno:Documentation, geno:Marginalia, geno:OtherMaterial. Based on these sub-classes, each witness belongs to the endogenesis or exogenesis (De Biasi 1996, De Biasi 2020): avant-textual witnesses and diary entries are considered as endogenetic witnesses, while documentation, marginalia and other materials as exogenetic witnesses (Fig. 4).</p>
+
+   <div class="image">
+      <img width="80%" src="images/endo-exo.png"/>
+      <p class="caption">Figure 4: The witness, its subclasses and their distribution in endogenesis and exogenesis.</p>
+   </div><br/>
+
+   <p>An avant-textual witness is also characterised by a genetic stage. GENO offers a number of named individuals of type geno:GeneticStage (clear copy, draft, final copy, list, plan, proofs, published item, scenario, sketch), but others might be added depending on the needs of the different projects.
+      <br/>Avant-textual witnesses can be organised in phases: pre-compositional, compositional, pre-publication, post-editorial (De Biasi 1996, Mahrer 2017). In GENO, the affiliation of a witness to one of the four phases is inferred based on its genetic stage: for example, a witness with the genetic stage 'list' will be a member of the pre-compositional phase. These generic rules might be customised for better representing specific genetic profiles.
+   </p>
+
+
+<h3>Geno in use, competency questions and corresponding sparql queries</h3>
+
+<p>GENO is meant to be general enough to accommodate the needs of different projects. It is quite small and simple, because it only focuses on the materials from the point of view of the genetic status and relationships. GENO should be combined with other ontologies for describing bibliographic and archival resources.</p>
+
+<p>The competency questions used to develop the ontology and the corresponding sparql queries are <a href="https://github.com/gen-o/geno/tree/master/current/dataSample" target="_blank">available</a> together with two data samples, based on the <a href="https://roud.unil.ch/" target="_blank">Roud project</a> and the <a href="https://comment-enmer.github.io/" target="_blank"><i>Bernard Comment, “En mer”</i></a> prototype. 
+</p>
+
+<p id="genoRoud">GENO (previous versions: 0.1, 0.2) was originally created as part of the project « Gustave Roud. <i>Œuvres complètes</i> », the critical edition of the complete works of the Swiss author Gustave Roud (1897-1976), directed by D. Maggetti and C. Jaquier (University of Lausanne, 2017-2021).
+</p>
+
+
+<h3>Cite as </h3>
+
+<p>Ontology current version (1.0):
+<ul>
+<li>Elena Spadini. <i>GENO, the Genetic Network Ontology</i>. Revision: 1.0. https://w3id.org/geno</li>
+</ul>
+</p>
+
+<p>Ontology previous versions:
+   <ul>
+   <li>Christen, Alessio, and Elena Spadini. 2019. “Modeling Genetic Networks. Gustave Roud’s Œuvre, from Diary to Poetry Collections.” <i>Umanistica Digitale</i> 7. https://doi.org/10.6092/issn.2532-8816/9063.</li>
+   </ul>
    </p>
    
-   <h3>GENO in use</h3>
-   
-   <p>GENO is meant to be general enough to accommodate the needs of different projects. In practice, it should be combined with other ontologies for describing bibliographic and archival resources. GENO is quite small and simple, because it only focuses on the materials from the point of view of the genetic status and relationships.</p>
-   
-   
-   <h4>Testing GENO (current version: 1.0)</h4>
-   
-   <p>GENO has been tested with two <a href="https://github.com/gen-o/geno/tree/master/current/dataSample">case studies</a>: the Roud project and the <i>Bernard Comment, “En mer”</i> prototype. Sparql queries are available together with the datasets.<!--: you can test GENO in your preferred triplestore or via a jupyter notebook.--></p>
-   
-   
-   <h4>GENO implementation in the Roud project (previous version: 0.2)</h4>
-   
-   <p>GENO (versions 0.1 and 0.2) has been created as part of the project « Gustave Roud. <i>Œuvres complètes</i>> », the critical edition of the complete works of the Swiss author Gustave Roud (1897-1976) (directed by D. Maggetti and C. Jaquier, University of Lausanne, 2017-2021). To know more about the project and the implementation of GENO in it, go to <a href="https://roud.unil.ch/">Gustave Roud. Textes et archives</a>.</p>
-   
-   
-   <h3>Cite as </h3>
-   
-   <p>Ontology current version (1.0):
-      <ul>
-         <li>Elena Spadini. <i>GENO, the Genetic Network Ontology</i>>. Revision: 1.0. https://w3id.org/geno</li>
-      </ul>
-   </p>
-   
-   <p>Visualisation of the Roud data modelled with GENO:
-      <ul>
-         <li>Pallacci, Valentina, Andrea Benedetti, Tommaso Elli, Elena Spadini, Michele Mauri, and Daniel Maggetti. 2022. “Visualizing the Genetic Process of Literary Works.” In <i>AIUCD 2022 - Proceedings</i>>, edited by Fabio Ciracì, Giulia Miglietta, and Carola Gatto. Quaderni Di Umanistica Digitale. http://amsacta.unibo.it/6848/.</li>
-         <li>Elli, Tommaso, Andrea Benedetti, Valentina Pallacci, Elena Spadini, and Michele Mauri. 2023. “Designing Network Visualizations for Genetic Literary Criticism.” <i>Convergences - Journal of Research and Arts Education</i>> 16 (31): 25–38. https://doi.org/10.53681/c1514225187514391s.31.176.</li>
-      </ul>
-   </p>
-   
-   <p>Ontology development and general description:
-      <ul>
-         <li>Christen, Alessio, and Elena Spadini. 2019. “Modeling Genetic Networks. Gustave Roud’s Œuvre, from Diary to Poetry Collections.” <i>Umanistica Digitale</i>> 7. https://doi.org/10.6092/issn.2532-8816/9063.</li>
-      </ul>
-   </p>
+
+<p>Visualisations of the Roud data, modelled with GENO:
+<ul>
+<li>Pallacci, Valentina, Andrea Benedetti, Tommaso Elli, Elena Spadini, Michele Mauri, and Daniel Maggetti. 2022. “Visualizing the Genetic Process of Literary Works.” In <i>AIUCD 2022 - Proceedings</i>, edited by Fabio Ciracì, Giulia Miglietta, and Carola Gatto. Quaderni Di Umanistica Digitale. http://amsacta.unibo.it/6848/.</li>
+<li>Elli, Tommaso, Andrea Benedetti, Valentina Pallacci, Elena Spadini, and Michele Mauri. 2023. “Designing Network Visualizations for Genetic Literary Criticism.” <i>Convergences - Journal of Research and Arts Education</i> 16 (31): 25–38. https://doi.org/10.53681/c1514225187514391s.31.176.</li>
+</ul>
+</p>
+
 
 </div>
-   
+
 
 <!--CROSSREF SECTION-->
-   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for GENO, the Genetic Networks Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="crossref">
+<h2 id="crossreference" class="list">Cross-reference for GENO, the Genetic Networks Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a>
+</span>
+</h2>
 This section provides details for each class and property defined by GENO, the Genetic Networks Ontology.
 <div xmlns:extra="https://w3id.org/extra#"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     id="classes">
-   <h3 id="classes-headline" class="list">Classes</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-      </li>
-      <li>
-         <a href="#CompositionalPhaseResource" title="https://w3id.org/geno#CompositionalPhaseResource">Compositional phase resource</a>
-      </li>
-      <li>
-         <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-      </li>
-      <li>
-         <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-      </li>
-      <li>
-         <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-      </li>
-      <li>
-         <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-      </li>
-      <li>
-         <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">Expression</a>
-      </li>
-      <li>
-         <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-      </li>
-      <li>
-         <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-      </li>
-      <li>
-         <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-      </li>
-      <li>
-         <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-      </li>
-      <li>
-         <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-      </li>
-      <li>
-         <a href="#PrecompositionalPhaseResource"
-            title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-      </li>
-      <li>
-         <a href="#PrepublicationPhaseResource"
-            title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-      </li>
-      <li>
-         <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-      </li>
-      <li>
-         <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-      </li>
-      <li>
-         <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-      </li>
-      <li>
-         <a href="#http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text"
-            title="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">Written Text</a>
-      </li>
-   </ul>
-   <div class="entity" id="Avant-textualWitness">
-      <h3>Avant-textual witness<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Avant-textualWitness</p>
-      <div class="comment">
-         <span class="markdown">The witness created within a writing project. Compared to other types of witness (diary, marginalia etc.), the avant-textual witness is a priori genetic, because it is born as a plan, a list, a draft for something.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="CompositionalPhaseResource">
-      <h3>Compositional phase resource<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#CompositionalPhaseResource</p>
-      <div class="comment">
-         <span class="markdown">The witness that belongs to the compositional phase of the writing project, such as a sketch, a draft or a clear copy.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">and</span> ((<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">clear copy</a>) <span class="logic">or</span> (<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#Draft" title="https://w3id.org/geno#Draft">draft</a>) <span class="logic">or</span> (<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#Sketch" title="https://w3id.org/geno#Sketch">sketch</a>))</dd>
-      </dl>
-   </div>
-   <div class="entity" id="DiaryEntry">
-      <h3>Diary entry<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#DiaryEntry</p>
-      <div class="comment">
-         <span class="markdown">A diary entry, usually defined by a date and sometimes a place at the beginning of the text. It is not genetic material a priori, but becomes part of the genetic dossier when used in a writing project.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Documentation">
-      <h3>Documentation<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Documentation</p>
-      <div class="comment">
-         <span class="markdown">Documentation used by the author in a writing project. For example, a web page or newspaper clipping that the author consults.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="EndogenesisWitness">
-      <h3>Endogenetic witness<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#EndogenesisWitness</p>
-      <div class="comment">
-         <span class="markdown">The text written by the author and internal to the writing project.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">and</span> (<a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">or</span> 
-            <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>)</dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ExogenesisWitness">
-      <h3>Exogenetic witness<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#ExogenesisWitness</p>
-      <div class="comment">
-         <span class="markdown">The text, whether written or annotated by the author or not, that is brought into the genetic dossier from outside, such as external sources and documentation.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">and</span> (<a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">or</span> 
-            <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">or</span> 
-            <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>)</dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://purl.org/spar/fabio/Expression">
-      <h3>Expression<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/spar/fabio/Expression</p>
-      <div class="comment">
-         <span class="markdown">A subclass of FRBR expression, restricted to expressions of fabio:Works.</span>
-      </div>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="GeneticDossier">
-      <h3>Genetic dossier<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#GeneticDossier</p>
-      <div class="comment">
-         <span class="markdown">The collection of witnesses that provide evidence for a writing project, resulting or not in a publication. The genetic dossier is a critical construction of the interpreter studying the materials. The genetic dossier includes avant-textual witnesses, but also other types of witnesses, such as diary entries, marginalia or documentation. It may contain one or more sub-dossiers, which are instances of the same geno:GeneticDossier class and are linked to it through the property geno:dossierIsPartOfDossier.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd/>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#publicationIsReusedInDossier"
-               title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#publicationPartIsReusedInDossier"
-               title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="GeneticStage">
-      <h3>Genetic stage<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#GeneticStage</p>
-      <div class="comment">
-         <span class="markdown">The genetic stage of an avant-textual witness. Possible values are defined in the current ontology: sketch, scenario, plan, list, draft, clear copy, final copy, proofs, published item. This list of values can be extended by adding new instances.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="http://www.w3.org/2002/07/owl#Thing"
-               target="_blank"
-               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>has members</dt>
-         <dd>
-            <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">clear copy</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Draft" title="https://w3id.org/geno#Draft">draft</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">final copy</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#List" title="https://w3id.org/geno#List">list</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Plan" title="https://w3id.org/geno#Plan">plan</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Proofs" title="https://w3id.org/geno#Proofs">proofs</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">published item</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Scenario" title="https://w3id.org/geno#Scenario">scenario</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Sketch" title="https://w3id.org/geno#Sketch">sketch</a>
-            <sup class="type-ni" title="named individual">ni</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Marginalia">
-      <h3>Marginalia<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Marginalia</p>
-      <div class="comment">
-         <span class="markdown">The mark or annotation in a publication by another author, that is considered relevant to a genetic process and is therefore included in the genetic dossier.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="OtherMaterial">
-      <h3>Other material<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#OtherMaterial</p>
-      <div class="comment">
-         <span class="markdown">Any other material that is considered relevant to a genetic process and is therefore included in the genetic dossier. For example, the contract with a publisher. The type of material can be further specified by extending the current ontology.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PostEditorialPhaseResource">
-      <h3>Post-editorial phase resource<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#PostEditorialPhaseResource</p>
-      <div class="comment">
-         <span class="markdown">The witness that belongs to the post-editorial phase of the writing project, for example a published exemplar with annotations.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">and</span> (<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">published item</a>)</dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PrecompositionalPhaseResource">
-      <h3>Pre-compositional phase resource<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#PrecompositionalPhaseResource</p>
-      <div class="comment">
-         <span class="markdown">The witness that belongs to the pre-compositional phase of the writing project, such as a list, a plan or a scenario.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">and</span> ((<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#List" title="https://w3id.org/geno#List">list</a>) <span class="logic">or</span> (<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#Plan" title="https://w3id.org/geno#Plan">plan</a>) <span class="logic">or</span> (<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#Scenario" title="https://w3id.org/geno#Scenario">scenario</a>))</dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PrepublicationPhaseResource">
-      <h3>Pre-publication phase resource<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#PrepublicationPhaseResource</p>
-      <div class="comment">
-         <span class="markdown">The witness that belongs to the pre-publication phase of the writing project, such as the final copy or the proofs.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup> 
-            <span class="logic">and</span> ((<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">final copy</a>) <span class="logic">or</span> (<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">value</span> 
-            <a href="#Proofs" title="https://w3id.org/geno#Proofs">proofs</a>))</dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Publication">
-      <h3>Publication<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Publication</p>
-      <div class="comment">
-         <span class="markdown">The publication, e.g. the book or the journal article. As a subclass of fabio:Expression, the publication is the realisation of a work; it is embodied in manifestations that have one or more exemplars in single items. For example, the publication is the book, that can be referenced with bibliographical information such as author, title, publisher, date of publication. The publication differs from the individual exemplars of the book, for example from a copy of the book with authorial annotations in view of a new edition (i.e., an avant-textual witness).</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">Expression</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#publicationIsReusedInDossier"
-               title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PublicationPart">
-      <h3>Publication part<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#PublicationPart</p>
-      <div class="comment">
-         <span class="markdown">The single part of a publication. For example, a chapter in a novel, a short story or a poem in a collection.</span>
-      </div>
-      <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#publicationPartIsReusedInDossier"
-               title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrecompositionalPhaseResource"
-               title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PrepublicationPhaseResource"
-               title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Witness">
-      <h3>Witness<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Witness</p>
-      <div class="comment">
-         <span class="markdown">A witness is an existing instance of a text. Witnesses may be carried in any physical medium (e.g. paper, digital, oral) and traced with any technique and tool (e.g. handwritten, typed) and a single carrier may contain several witnesses. As a subclass of CRMtex:TX1_Written_Text, the witness is unique and characterised by the close relationship between the text and its support.</span>
-      </div>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">
-      <h3>Written Text<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text</p>
-      <div class="comment">
-         <span class="markdown">This class comprises visible or tactile marks (called glyphs or graphs), which relate in a systematic way to units of speech, intentionally traced (i.e., “written”) on some kind of physical support by using specific techniques and tools, with the purpose of conveying a message towards a given receiver or group of receivers.</span>
-      </div>
-   </div>
-</div><div xmlns:extra="https://w3id.org/extra#"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     id="objectproperties">
-   <h3 id="properties" class="list">Object Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
-      </li>
-      <li>
-         <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
-      </li>
-      <li>
-         <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
-      </li>
-      <li>
-         <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
-      </li>
-      <li>
-         <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
-      </li>
-      <li>
-         <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
-      </li>
-      <li>
-         <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
-      </li>
-      <li>
-         <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
-      </li>
-      <li>
-         <a href="#publicationIsReusedInDossier"
-            title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
-      </li>
-      <li>
-         <a href="#publicationPartIsReusedInDossier"
-            title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
-      </li>
-      <li>
-         <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
-      </li>
-      <li>
-         <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
-      </li>
-   </ul>
-   <div class="entity" id="dossierIsPartOfDossier">
-      <h3>dossier is part of dossier<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#dossierIsPartOfDossier</p>
-      <div class="comment">
-         <span class="markdown">The genetic dossier is part of another genetic dossier. For example, the different sections of a book may each have a different genesis, documented in different dossiers; the dossier of each section is part of the dossier of the book.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="dossierIsReusedInDossier">
-      <h3>dossier is reused in dossier<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#dossierIsReusedInDossier</p>
-      <div class="comment">
-         <span class="markdown">The genetic dossier is reused in another genetic dossier. This property applies to a dossier that does not result in a publication, i.e. an unpublished writing project, whose materials are reused in another project.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasGeneticStage">
-      <h3>has genetic stage<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#hasGeneticStage</p>
-      <div class="comment">
-         <span class="markdown">The genetic stage of an avant-textual witness. The possible values are defined as instances of geno:GeneticStage.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isAfter">
-      <h3>is after<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#isAfter</p>
-      <div class="comment">
-         <span class="markdown">The witness comes chronologically after another witness in the genetic dossier. Defining the chronological succession of the witnesses means ordering them (fr. classement des manuscrits).</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isBefore">
-      <h3>is before<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#isBefore</p>
-      <div class="comment">
-         <span class="markdown">The witness comes chronologically before another witness in the genetic dossier. Defining the chronological succession of the witnesses means ordering them (fr. classement des manuscrits).</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMemberOfDossier">
-      <h3>is member of dossier<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#isMemberOfDossier</p>
-      <div class="comment">
-         <span class="markdown">The witness is a member of the dossier. The same witness can be a member of multiple dossiers.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isPartOfPublication">
-      <h3>is part of publication<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#isPartOfPublication</p>
-      <div class="comment">
-         <span class="markdown">The section of a publication is part of the whole publication.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isReusedInDossier">
-      <h3>is reused in dossier<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#isReusedInDossier</p>
-      <div class="comment">
-         <span class="markdown">A super-property that groups all the properties that describe the reuse of a resource (a publication, publication part or dossier) in a genetic dossier.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#publicationIsReusedInDossier"
-                  title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#publicationPartIsReusedInDossier"
-                  title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="publicationIsReusedInDossier">
-      <h3>publication is reused in dossier<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#publicationIsReusedInDossier</p>
-      <div class="comment">
-         <span class="markdown">The publication is repurposed for another writing project, documented by a genetic dossier.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="publicationPartIsReusedInDossier">
-      <h3>publication part is reused in dossier<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#publicationPartIsReusedInDossier</p>
-      <div class="comment">
-         <span class="markdown">The publication part (section, chapter, etc.) is repurposed for another writing project, documented by a genetic dossier.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="resultsInPublication">
-      <h3>results in publication<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#resultsInPublication</p>
-      <div class="comment">
-         <span class="markdown">The genetic dossier results in a publication.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="resultsInPublicationPart">
-      <h3>results in publication part<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#resultsInPublicationPart</p>
-      <div class="comment">
-         <span class="markdown">The genetic dossier results in a part of a publication (section, chapter, etc.).</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div xmlns:extra="https://w3id.org/extra#"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     id="namedindividuals">
-   <h3 id="namedindividuals" class="list">Named Individuals</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">
-            <span>clear copy</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Draft" title="https://w3id.org/geno#Draft">
-            <span>draft</span>
-         </a>
-      </li>
-      <li>
-         <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">
-            <span>final copy</span>
-         </a>
-      </li>
-      <li>
-         <a href="#List" title="https://w3id.org/geno#List">
-            <span>list</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Plan" title="https://w3id.org/geno#Plan">
-            <span>plan</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Proofs" title="https://w3id.org/geno#Proofs">
-            <span>proofs</span>
-         </a>
-      </li>
-      <li>
-         <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">
-            <span>published item</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Scenario" title="https://w3id.org/geno#Scenario">
-            <span>scenario</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Sketch" title="https://w3id.org/geno#Sketch">
-            <span>sketch</span>
-         </a>
-      </li>
-   </ul>
-   <div class="entity" id="ClearCopy">
-      <h3>clear copy<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#ClearCopy</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Draft">
-      <h3>draft<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Draft</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="FinalCopy">
-      <h3>final copy<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#FinalCopy</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="List">
-      <h3>list<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#List</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Plan">
-      <h3>plan<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Plan</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Proofs">
-      <h3>proofs<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Proofs</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PublishedItem">
-      <h3>published item<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#PublishedItem</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Scenario">
-      <h3>scenario<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Scenario</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Sketch">
-      <h3>sketch<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/geno#Sketch</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-</div><div id="legend">
-<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<div   class="entity">
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+<h3 id="classes-headline" class="list">Classes</h3>
+<ul class="hlist">
+<li>
+<a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+</li>
+<li>
+<a href="#CompositionalPhaseResource" title="https://w3id.org/geno#CompositionalPhaseResource">Compositional phase resource</a>
+</li>
+<li>
+<a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+</li>
+<li>
+<a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+</li>
+<li>
+<a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+</li>
+<li>
+<a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+</li>
+<li>
+<a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">Expression</a>
+</li>
+<li>
+<a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+</li>
+<li>
+<a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+</li>
+<li>
+<a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+</li>
+<li>
+<a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+</li>
+<li>
+<a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+</li>
+<li>
+<a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+</li>
+<li>
+<a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+</li>
+<li>
+<a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+</li>
+<li>
+<a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+</li>
+<li>
+<a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+</li>
+<li>
+<a href="#http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text" title="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">Written Text</a>
+</li>
+</ul>
+<div class="entity" id="Avant-textualWitness">
+<h3>Avant-textual witness<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Avant-textualWitness</p>
+<div class="comment">
+<span class="markdown">The witness created within a writing project. Compared to other types of witness (diary, marginalia etc.), the avant-textual witness is a priori genetic, because it is born as a plan, a list, a draft for something.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is in domain of</dt>
+<dd>
+   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="CompositionalPhaseResource">
+<h3>Compositional phase resource<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#CompositionalPhaseResource</p>
+<div class="comment">
+<span class="markdown">The witness that belongs to the compositional phase of the writing project, such as a sketch, a draft or a clear copy.</span>
+</div>
+<dl class="description">
+<dt>is equivalent to</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">and</span> ((   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">clear copy</a>)   <span class="logic">or</span> (   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#Draft" title="https://w3id.org/geno#Draft">draft</a>)   <span class="logic">or</span> (   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#Sketch" title="https://w3id.org/geno#Sketch">sketch</a>))
+</dd>
+</dl>
+</div>
+<div class="entity" id="DiaryEntry">
+<h3>Diary entry<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#DiaryEntry</p>
+<div class="comment">
+<span class="markdown">A diary entry, usually defined by a date and sometimes a place at the beginning of the text. It is not genetic material a priori, but becomes part of the genetic dossier when used in a writing project.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Documentation">
+<h3>Documentation<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Documentation</p>
+<div class="comment">
+<span class="markdown">Documentation used by the author in a writing project. For example, a web page or newspaper clipping that the author consults.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="EndogenesisWitness">
+<h3>Endogenetic witness<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#EndogenesisWitness</p>
+<div class="comment">
+<span class="markdown">The text written by the author and internal to the writing project.</span>
+</div>
+<dl class="description">
+<dt>is equivalent to</dt>
+<dd>
+   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">and</span> (   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">or</span>
+   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>)
+</dd>
+<dt>has super-classes</dt>
+<dd>
+   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has sub-classes</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="ExogenesisWitness">
+<h3>Exogenetic witness<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#ExogenesisWitness</p>
+<div class="comment">
+<span class="markdown">The text, whether written or annotated by the author or not, that is brought into the genetic dossier from outside, such as external sources and documentation.</span>
+</div>
+<dl class="description">
+<dt>is equivalent to</dt>
+<dd>
+   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">and</span> (   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">or</span>
+   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">or</span>
+   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>)
+</dd>
+<dt>has super-classes</dt>
+<dd>
+   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has sub-classes</dt>
+<dd>
+   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="http://purl.org/spar/fabio/Expression">
+<h3>Expression<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://purl.org/spar/fabio/Expression</p>
+<div class="comment">
+<span class="markdown">A subclass of FRBR expression, restricted to expressions of fabio:Works.</span>
+</div>
+<dl class="description">
+<dt>has sub-classes</dt>
+<dd>
+   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="GeneticDossier">
+<h3>Genetic dossier<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#GeneticDossier</p>
+<div class="comment">
+<span class="markdown">The collection of witnesses that provide evidence for a writing project, resulting or not in a publication. The genetic dossier is a critical construction of the interpreter studying the materials. The genetic dossier includes avant-textual witnesses, but also other types of witnesses, such as diary entries, marginalia or documentation. It may contain one or more sub-dossiers, which are instances of the same geno:GeneticDossier class and are linked to it through the property geno:dossierIsPartOfDossier.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd/>
+<dt>is in domain of</dt>
+<dd>
+   <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+   <a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#publicationIsReusedInDossier" title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#publicationPartIsReusedInDossier" title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="GeneticStage">
+<h3>Genetic stage<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#GeneticStage</p>
+<div class="comment">
+<span class="markdown">The genetic stage of an avant-textual witness. Possible values are defined in the current ontology: sketch, scenario, plan, list, draft, clear copy, final copy, proofs, published item. This list of values can be extended by adding new instances.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has members</dt>
+<dd>
+   <a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">clear copy</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#Draft" title="https://w3id.org/geno#Draft">draft</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">final copy</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#List" title="https://w3id.org/geno#List">list</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#Plan" title="https://w3id.org/geno#Plan">plan</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#Proofs" title="https://w3id.org/geno#Proofs">proofs</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">published item</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#Scenario" title="https://w3id.org/geno#Scenario">scenario</a>
+   <sup class="type-ni" title="named individual">ni</sup>,   <a href="#Sketch" title="https://w3id.org/geno#Sketch">sketch</a>
+   <sup class="type-ni" title="named individual">ni</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Marginalia">
+<h3>Marginalia<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Marginalia</p>
+<div class="comment">
+<span class="markdown">The mark or annotation in a publication by another author, that is considered relevant to a genetic process and is therefore included in the genetic dossier.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="OtherMaterial">
+<h3>Other material<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#OtherMaterial</p>
+<div class="comment">
+<span class="markdown">Any other material that is considered relevant to a genetic process and is therefore included in the genetic dossier. For example, the contract with a publisher. The type of material can be further specified by extending the current ontology.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="PostEditorialPhaseResource">
+<h3>Post-editorial phase resource<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#PostEditorialPhaseResource</p>
+<div class="comment">
+<span class="markdown">The witness that belongs to the post-editorial phase of the writing project, for example a published exemplar with annotations.</span>
+</div>
+<dl class="description">
+<dt>is equivalent to</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">and</span> (   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">published item</a>)
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="PrecompositionalPhaseResource">
+<h3>Pre-compositional phase resource<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#PrecompositionalPhaseResource</p>
+<div class="comment">
+<span class="markdown">The witness that belongs to the pre-compositional phase of the writing project, such as a list, a plan or a scenario.</span>
+</div>
+<dl class="description">
+<dt>is equivalent to</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">and</span> ((   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#List" title="https://w3id.org/geno#List">list</a>)   <span class="logic">or</span> (   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#Plan" title="https://w3id.org/geno#Plan">plan</a>)   <span class="logic">or</span> (   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#Scenario" title="https://w3id.org/geno#Scenario">scenario</a>))
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="PrepublicationPhaseResource">
+<h3>Pre-publication phase resource<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#PrepublicationPhaseResource</p>
+<div class="comment">
+<span class="markdown">The witness that belongs to the pre-publication phase of the writing project, such as the final copy or the proofs.</span>
+</div>
+<dl class="description">
+<dt>is equivalent to</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>
+   <span class="logic">and</span> ((   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">final copy</a>)   <span class="logic">or</span> (   <a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+   <sup class="type-op" title="object property">op</sup>
+   <span class="logic">value</span>
+   <a href="#Proofs" title="https://w3id.org/geno#Proofs">proofs</a>))
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Publication">
+<h3>Publication<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Publication</p>
+<div class="comment">
+<span class="markdown">The publication, e.g. the book or the journal article. As a subclass of fabio:Expression, the publication is the realisation of a work; it is embodied in manifestations that have one or more exemplars in single items. For example, the publication is the book, that can be referenced with bibliographical information such as author, title, publisher, date of publication. The publication differs from the individual exemplars of the book, for example from a copy of the book with authorial annotations in view of a new edition (i.e., an avant-textual witness).</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">Expression</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is in domain of</dt>
+<dd>
+   <a href="#publicationIsReusedInDossier" title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+   <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="PublicationPart">
+<h3>Publication part<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#PublicationPart</p>
+<div class="comment">
+<span class="markdown">The single part of a publication. For example, a chapter in a novel, a short story or a poem in a collection.</span>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+   <a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#publicationPartIsReusedInDossier" title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+   <a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PostEditorialPhaseResource" title="https://w3id.org/geno#PostEditorialPhaseResource">Post-editorial phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrecompositionalPhaseResource" title="https://w3id.org/geno#PrecompositionalPhaseResource">Pre-compositional phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PrepublicationPhaseResource" title="https://w3id.org/geno#PrepublicationPhaseResource">Pre-publication phase resource</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Witness">
+<h3>Witness<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Witness</p>
+<div class="comment">
+<span class="markdown">A witness is an existing instance of a text. Witnesses may be carried in any physical medium (e.g. paper, digital, oral) and traced with any technique and tool (e.g. handwritten, typed) and a single carrier may contain several witnesses. As a subclass of CRMtex:TX1_Written_Text, the witness is unique and characterised by the close relationship between the text and its support.</span>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+   <a href="#http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text" title="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">Written Text</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has sub-classes</dt>
+<dd>
+   <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#DiaryEntry" title="https://w3id.org/geno#DiaryEntry">Diary entry</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Documentation" title="https://w3id.org/geno#Documentation">Documentation</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#EndogenesisWitness" title="https://w3id.org/geno#EndogenesisWitness">Endogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#ExogenesisWitness" title="https://w3id.org/geno#ExogenesisWitness">Exogenetic witness</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Marginalia" title="https://w3id.org/geno#Marginalia">Marginalia</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#OtherMaterial" title="https://w3id.org/geno#OtherMaterial">Other material</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is in domain of</dt>
+<dd>
+   <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+   <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
+   <sup class="type-op" title="object property">op</sup>,   <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
+   <sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is disjoint with</dt>
+<dd>
+   <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+   <sup class="type-c" title="class">c</sup>,   <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text">
+<h3>Written Text<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://www.cidoc-crm.org/extensions/crmtex/TX1_Written_Text</p>
+<div class="comment">
+<span class="markdown">This class comprises visible or tactile marks (called glyphs or graphs), which relate in a systematic way to units of speech, intentionally traced (i.e., “written”) on some kind of physical support by using specific techniques and tools, with the purpose of conveying a message towards a given receiver or group of receivers.</span>
+</div>
+<dl class="description">
+<dt>has sub-classes</dt>
+<dd>
+   <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div xmlns:extra="https://w3id.org/extra#"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+<h3 id="properties" class="list">Object Properties</h3>
+<ul class="hlist">
+<li>
+<a href="#dossierIsPartOfDossier" title="https://w3id.org/geno#dossierIsPartOfDossier">dossier is part of dossier</a>
+</li>
+<li>
+<a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
+</li>
+<li>
+<a href="#hasGeneticStage" title="https://w3id.org/geno#hasGeneticStage">has genetic stage</a>
+</li>
+<li>
+<a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
+</li>
+<li>
+<a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
+</li>
+<li>
+<a href="#isMemberOfDossier" title="https://w3id.org/geno#isMemberOfDossier">is member of dossier</a>
+</li>
+<li>
+<a href="#isPartOfPublication" title="https://w3id.org/geno#isPartOfPublication">is part of publication</a>
+</li>
+<li>
+<a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
+</li>
+<li>
+<a href="#publicationIsReusedInDossier" title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
+</li>
+<li>
+<a href="#publicationPartIsReusedInDossier" title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
+</li>
+<li>
+<a href="#resultsInPublication" title="https://w3id.org/geno#resultsInPublication">results in publication</a>
+</li>
+<li>
+<a href="#resultsInPublicationPart" title="https://w3id.org/geno#resultsInPublicationPart">results in publication part</a>
+</li>
+</ul>
+<div class="entity" id="dossierIsPartOfDossier">
+<h3>dossier is part of dossier<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#dossierIsPartOfDossier</p>
+<div class="comment">
+<span class="markdown">The genetic dossier is part of another genetic dossier. For example, the different sections of a book may each have a different genesis, documented in different dossiers; the dossier of each section is part of the dossier of the book.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="dossierIsReusedInDossier">
+<h3>dossier is reused in dossier<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#dossierIsReusedInDossier</p>
+<div class="comment">
+<span class="markdown">The genetic dossier is reused in another genetic dossier. This property applies to a dossier that does not result in a publication, i.e. an unpublished writing project, whose materials are reused in another project.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has super-properties</dt>
+   <dd>
+      <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
+      <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="hasGeneticStage">
+<h3>has genetic stage<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#hasGeneticStage</p>
+<div class="comment">
+<span class="markdown">The genetic stage of an avant-textual witness. The possible values are defined as instances of geno:GeneticStage.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#Avant-textualWitness" title="https://w3id.org/geno#Avant-textualWitness">Avant-textual witness</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="isAfter">
+<h3>is after<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#isAfter</p>
+<div class="comment">
+<span class="markdown">The witness comes chronologically after another witness in the genetic dossier. Defining the chronological succession of the witnesses means ordering them (fr. classement des manuscrits).</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is inverse of</dt>
+   <dd>
+      <a href="#isBefore" title="https://w3id.org/geno#isBefore">is before</a>
+      <sup class="type-op" title="object property">op</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="isBefore">
+<h3>is before<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#isBefore</p>
+<div class="comment">
+<span class="markdown">The witness comes chronologically before another witness in the genetic dossier. Defining the chronological succession of the witnesses means ordering them (fr. classement des manuscrits).</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is inverse of</dt>
+   <dd>
+      <a href="#isAfter" title="https://w3id.org/geno#isAfter">is after</a>
+      <sup class="type-op" title="object property">op</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="isMemberOfDossier">
+<h3>is member of dossier<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#isMemberOfDossier</p>
+<div class="comment">
+<span class="markdown">The witness is a member of the dossier. The same witness can be a member of multiple dossiers.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#Witness" title="https://w3id.org/geno#Witness">Witness</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="isPartOfPublication">
+<h3>is part of publication<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#isPartOfPublication</p>
+<div class="comment">
+<span class="markdown">The section of a publication is part of the whole publication.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="isReusedInDossier">
+<h3>is reused in dossier<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#isReusedInDossier</p>
+<div class="comment">
+<span class="markdown">A super-property that groups all the properties that describe the reuse of a resource (a publication, publication part or dossier) in a genetic dossier.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has sub-properties</dt>
+   <dd>
+      <a href="#dossierIsReusedInDossier" title="https://w3id.org/geno#dossierIsReusedInDossier">dossier is reused in dossier</a>
+      <sup class="type-op" title="object property">op</sup>,      <a href="#publicationIsReusedInDossier" title="https://w3id.org/geno#publicationIsReusedInDossier">publication is reused in dossier</a>
+      <sup class="type-op" title="object property">op</sup>,      <a href="#publicationPartIsReusedInDossier" title="https://w3id.org/geno#publicationPartIsReusedInDossier">publication part is reused in dossier</a>
+      <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="publicationIsReusedInDossier">
+<h3>publication is reused in dossier<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#publicationIsReusedInDossier</p>
+<div class="comment">
+<span class="markdown">The publication is repurposed for another writing project, documented by a genetic dossier.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has super-properties</dt>
+   <dd>
+      <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
+      <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="publicationPartIsReusedInDossier">
+<h3>publication part is reused in dossier<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#publicationPartIsReusedInDossier</p>
+<div class="comment">
+<span class="markdown">The publication part (section, chapter, etc.) is repurposed for another writing project, documented by a genetic dossier.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has super-properties</dt>
+   <dd>
+      <a href="#isReusedInDossier" title="https://w3id.org/geno#isReusedInDossier">is reused in dossier</a>
+      <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="resultsInPublication">
+<h3>results in publication<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#resultsInPublication</p>
+<div class="comment">
+<span class="markdown">The genetic dossier results in a publication.</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#Publication" title="https://w3id.org/geno#Publication">Publication</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="resultsInPublicationPart">
+<h3>results in publication part<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#resultsInPublicationPart</p>
+<div class="comment">
+<span class="markdown">The genetic dossier results in a part of a publication (section, chapter, etc.).</span>
+</div>
+<div class="description">
+<dl>
+   <dt>has domain</dt>
+   <dd>
+      <a href="#GeneticDossier" title="https://w3id.org/geno#GeneticDossier">Genetic dossier</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has range</dt>
+   <dd>
+      <a href="#PublicationPart" title="https://w3id.org/geno#PublicationPart">Publication part</a>
+      <sup class="type-c" title="class">c</sup>
+   </dd>
+</dl>
+</div>
+</div>
+</div>
+<div xmlns:extra="https://w3id.org/extra#"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+<h3 id="namedindividuals" class="list">Named Individuals</h3>
+<ul class="hlist">
+<li>
+<a href="#ClearCopy" title="https://w3id.org/geno#ClearCopy">
+   <span>clear copy</span>
+</a>
+</li>
+<li>
+<a href="#Draft" title="https://w3id.org/geno#Draft">
+   <span>draft</span>
+</a>
+</li>
+<li>
+<a href="#FinalCopy" title="https://w3id.org/geno#FinalCopy">
+   <span>final copy</span>
+</a>
+</li>
+<li>
+<a href="#List" title="https://w3id.org/geno#List">
+   <span>list</span>
+</a>
+</li>
+<li>
+<a href="#Plan" title="https://w3id.org/geno#Plan">
+   <span>plan</span>
+</a>
+</li>
+<li>
+<a href="#Proofs" title="https://w3id.org/geno#Proofs">
+   <span>proofs</span>
+</a>
+</li>
+<li>
+<a href="#PublishedItem" title="https://w3id.org/geno#PublishedItem">
+   <span>published item</span>
+</a>
+</li>
+<li>
+<a href="#Scenario" title="https://w3id.org/geno#Scenario">
+   <span>scenario</span>
+</a>
+</li>
+<li>
+<a href="#Sketch" title="https://w3id.org/geno#Sketch">
+   <span>sketch</span>
+</a>
+</li>
+</ul>
+<div class="entity" id="ClearCopy">
+<h3>clear copy<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#ClearCopy</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Draft">
+<h3>draft<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Draft</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="FinalCopy">
+<h3>final copy<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#FinalCopy</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="List">
+<h3>list<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#List</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Plan">
+<h3>plan<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Plan</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Proofs">
+<h3>proofs<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Proofs</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="PublishedItem">
+<h3>published item<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#PublishedItem</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Scenario">
+<h3>scenario<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Scenario</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="Sketch">
+<h3>sketch<sup class="type-ni" title="named individual">ni</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> https://w3id.org/geno#Sketch</p>
+<dl class="description">
+<dt>belongs to</dt>
+<dd>
+   <a href="#GeneticStage" title="https://w3id.org/geno#GeneticStage">Genetic stage</a>
+   <sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a>
+</span>
+</h2>
+<div class="entity">
 <sup class="type-c" title="Classes">c</sup>: Classes <br/>
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
 </div>
-    
+
 
 <!--REFERENCES SECTION-->
-  <div id="references">
-<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-Add your references here. It is recommended to have them as a list.</span>
+<div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a>
+</span>
+</h2>
+
+<!-- zotero export-->
+<div class="csl-bib-body" style="line-height: 1.35; margin-left: 2em; text-indent:-2em;">
+   <div class="csl-entry">Davis, Ian, and Richard Newman. 2005. “Expression of Core FRBR Concepts in RDF.” <a href="https://vocab.org/frbr/core#term-Expression">https://vocab.org/frbr/core#term-Expression</a>.</div>
+   <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=standard&amp;rft.title=Expression%20of%20Core%20FRBR%20Concepts%20in%20RDF&amp;rft.identifier=https%3A%2F%2Fvocab.org%2Ffrbr%2Fcore%23term-Expression&amp;rft.aufirst=Ian&amp;rft.aulast=Davis&amp;rft.au=Ian%20Davis&amp;rft.au=Richard%20Newman&amp;rft.date=2005"></span>
+   <div class="csl-entry">De Biasi, Pierre-Marc. 1996. “What Is a Literary Draft? Toward a Functional Typology of Genetic Documentation.” <i>Yale French Studies</i>, no. 89: 26–58. <a href="https://doi.org/10.2307/2930337">https://doi.org/10.2307/2930337</a>.</div>
+   <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.2307%2F2930337&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=What%20is%20a%20Literary%20Draft%3F%20Toward%20a%20Functional%20Typology%20of%20Genetic%20Documentation&amp;rft.jtitle=Yale%20French%20Studies&amp;rft.issue=89&amp;rft.aufirst=Pierre-Marc&amp;rft.aulast=De%20Biasi&amp;rft.au=Pierre-Marc%20De%20Biasi&amp;rft.date=1996&amp;rft.pages=26-58&amp;rft.spage=26&amp;rft.epage=58&amp;rft.issn=0044-0078"></span>
+   <div class="csl-entry">———. 2004. “Toward a Science of Literature: Manuscript Analysis and the Genesis of the Work.” In <i>Genetic Criticism: Texts and Avant-Textes</i>, edited by Jed Deppman, Daniel Ferrer, and Michael Groden, 26–68. Philadelphia: University of Pensylvania Press.</div>
+   <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Toward%20a%20Science%20of%20Literature%3A%20Manuscript%20Analysis%20and%20the%20Genesis%20of%20the%20Work&amp;rft.place=Philadelphia&amp;rft.publisher=University%20of%20Pensylvania%20Press&amp;rft.aufirst=Pierre-Marc&amp;rft.aulast=De%20Biasi&amp;rft.au=Pierre-Marc%20De%20Biasi&amp;rft.au=Jed%20Deppman&amp;rft.au=Daniel%20Ferrer&amp;rft.au=Michael%20Groden&amp;rft.date=2004&amp;rft.pages=26%E2%80%9368&amp;rft.spage=26&amp;rft.epage=68"></span>
+   <div class="csl-entry">———. 2020. “De l’intertextualité à l’exogenèse.” <i>Genesis. Manuscrits – Recherche – Invention</i>, no. 51: 11–28.</div>
+   <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=De%20l%E2%80%99intertextualit%C3%A9%20%C3%A0%20l%E2%80%99exogen%C3%A8se&amp;rft.jtitle=Genesis.%20Manuscrits%20%E2%80%93%20Recherche%20%E2%80%93%20Invention&amp;rft.issue=51&amp;rft.aufirst=Pierre-Marc&amp;rft.aulast=De%20Biasi&amp;rft.au=Pierre-Marc%20De%20Biasi&amp;rft.date=2020-12-15&amp;rft.pages=11-28&amp;rft.spage=11&amp;rft.epage=28&amp;rft.issn=1167-5101&amp;rft.language=fr"></span>
+   <div class="csl-entry">Mahrer, Rudolf. 2017. “La plume après le plomb.” <i>Genesis. Manuscrits – Recherche – Invention</i>, no. 44: 17–38.</div>
+   <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=La%20plume%20apr%C3%A8s%20le%20plomb&amp;rft.jtitle=Genesis.%20Manuscrits%20%E2%80%93%20Recherche%20%E2%80%93%20Invention&amp;rft.issue=44&amp;rft.aufirst=Rudolf&amp;rft.aulast=Mahrer&amp;rft.au=Rudolf%20Mahrer&amp;rft.date=2017&amp;rft.pages=17-38&amp;rft.spage=17&amp;rft.epage=38&amp;rft.issn=1167-5101&amp;rft.language=fr"></span>
+ </div>
+<!-- end zotero export-->
+
 
 </div>
-   
+
 
 <!--CHANGELOG SECTION-->
-   <div id="changelog">null</div>
+<!--<div id="changelog">null</div>-->
 <div id="acknowledgments">
-<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a>
+</span>
+</h2>
 <p>
-The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document, as well as <a href="https://essepuntato.it/graffoo/">Graffoo</a>, a graphical framework for OWL Ontologies; and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
 </div>
 
 
